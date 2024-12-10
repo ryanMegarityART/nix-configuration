@@ -27,6 +27,18 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Set additional hosts for platform workspace
+  networking.extraHosts = ''
+    127.0.0.1 api-local.immerse.io
+    127.0.0.1 admin-local.immerse.io
+    127.0.0.1 vr-local.immerse.io
+    127.0.0.1 local.immerse.io
+    127.0.0.1 archway-local.immerse.io
+    127.0.0.1 dev-local.immerse.io
+    127.0.0.1 local.content-repository.immerse.io
+    127.0.0.1 pin-local.immerse.io
+  '';
+
   # Set your time zone.
   time.timeZone = "Europe/London";
 
