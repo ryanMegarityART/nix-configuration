@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -100,14 +101,18 @@
     isNormalUser = true;
     description = "Ryan";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    shell = pkgs.zsh; 
+    shell = pkgs.zsh;
     packages = with pkgs; [
-	  neovim
-	  gcc # required for neovim
-	  ripgrep # required for fuzzy find in neovim
-	  sqlfluff # linting for sql in neovim
-	  lazygit
-	  kitty
+      neovim
+      gcc # required for neovim
+      ripgrep # required for fuzzy find in neovim
+      sqlfluff # linting for sql in neovim
+      python3 # required for sqlfluff above
+      unzip # required for lua linting in Mason
+      rustc
+      cargo # required for nix formatting in Mason (nvim lsp)
+      lazygit
+      kitty
     ];
   };
 
@@ -120,31 +125,31 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	  google-chrome
-	  zoom-us
-	  slack
-	  git
-	  docker
-	  docker-compose
-	  awscli2
-	  nodejs_22
-	  yarn
-	  go
-	  gnome-tweaks # required to re-map capslock -> escape
-	  htop
-	  postgresql # for including command utilities such as psql
-	  wget
-	  zsh
-	  zsh-syntax-highlighting
-	  zsh-autosuggestions
-	  oh-my-zsh
+    google-chrome
+    zoom-us
+    slack
+    git
+    docker
+    docker-compose
+    awscli2
+    nodejs_22
+    yarn
+    go
+    gnome-tweaks # required to re-map capslock -> escape
+    htop
+    postgresql # for including command utilities such as psql
+    wget
+    zsh
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    oh-my-zsh
   ];
 
   virtualisation.docker.enable = true;
 
   virtualisation.docker.rootless = {
-  	enable = true;
-	setSocketVariable = true;
+    enable = true;
+    setSocketVariable = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -168,14 +173,14 @@
 
   hardware = {
     enableAllFirmware = true;
-    cpu.amd.updateMicrocode = true;  #needs unfree
+    cpu.amd.updateMicrocode = true; #needs unfree
     # Enable OpenGL
     graphics.enable = true;
     graphics.enable32Bit = true;
   };
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
 
@@ -209,10 +214,10 @@
     open = true;
 
     # Enable the Nvidia settings menu,
-	# accessible via `nvidia-settings`.
+    # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
-   # Optionally, you may need to select the appropriate driver version for your specific GPU.
+    # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
