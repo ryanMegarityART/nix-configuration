@@ -136,7 +136,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     google-chrome
-    zoom-us
+    # commenting zoom-us for now as the screen sharing doesn't seem to work with wayland and x11 seems to cause general freezing
+    # zoom-us
     slack
     git
     docker
