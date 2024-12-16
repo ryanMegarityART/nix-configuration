@@ -154,6 +154,7 @@
     zsh-syntax-highlighting
     zsh-autosuggestions
     oh-my-zsh
+    wl-clipboard
   ];
 
   virtualisation.docker.enable = true;
