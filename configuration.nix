@@ -155,6 +155,7 @@
     zsh-autosuggestions
     oh-my-zsh
     wl-clipboard
+    circleci-cli
   ];
 
   virtualisation.docker.enable = true;
