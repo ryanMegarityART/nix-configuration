@@ -123,6 +123,7 @@
       cargo # required for nix formatting in Mason (nvim lsp)
       lazygit
       kitty
+      fzf # required for lazyvim default fuzzy find packages
     ];
   };
 
