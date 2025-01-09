@@ -138,7 +138,7 @@
   environment.systemPackages = with pkgs; [
     google-chrome
     # commenting zoom-us for now as the screen sharing doesn't seem to work with wayland and x11 seems to cause general freezing
-    # zoom-us
+    zoom-us
     slack
     git
     docker
