@@ -158,6 +158,7 @@
     wl-clipboard
     circleci-cli
     arduino-ide
+    immersed
   ];
 
   virtualisation.docker.enable = true;
