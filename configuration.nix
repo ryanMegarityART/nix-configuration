@@ -157,6 +157,7 @@
     oh-my-zsh
     wl-clipboard
     circleci-cli
+    arduino-ide
   ];
 
   virtualisation.docker.enable = true;
