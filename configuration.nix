@@ -159,6 +159,7 @@
     circleci-cli
     arduino-ide
     immersed
+    openapi-tui
   ];
 
   virtualisation.docker.enable = true;
