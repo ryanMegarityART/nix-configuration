@@ -160,6 +160,7 @@
     arduino-ide
     immersed
     openapi-tui
+    zip
   ];
 
   virtualisation.docker.enable = true;
