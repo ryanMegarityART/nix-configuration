@@ -160,6 +160,7 @@
     arduino-ide
     immersed
     openapi-tui
+    bruno
     zip
   ];
 
