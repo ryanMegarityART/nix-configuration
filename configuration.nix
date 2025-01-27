@@ -162,6 +162,7 @@
     openapi-tui
     bruno
     zip
+    peek
   ];
 
   virtualisation.docker.enable = true;
