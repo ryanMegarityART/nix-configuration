@@ -163,6 +163,7 @@
     bruno
     zip
     peek
+    ollama
   ];
 
   virtualisation.docker.enable = true;
