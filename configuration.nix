@@ -164,6 +164,9 @@
     zip
     peek
     ollama
+    cudaPackages.cudatoolkit
+    nvidia-container-toolkit
+    ollama-cuda
   ];
 
   virtualisation.docker.enable = true;
@@ -241,6 +244,8 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  hardware.nvidia-container-toolkit.enable = true;
 
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
