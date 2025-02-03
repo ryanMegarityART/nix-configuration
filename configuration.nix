@@ -167,6 +167,7 @@
     cudaPackages.cudatoolkit
     nvidia-container-toolkit
     ollama-cuda
+    obs-studio
   ];
 
   virtualisation.docker.enable = true;
