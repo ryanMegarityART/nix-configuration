@@ -37,6 +37,8 @@
     127.0.0.1 dev-local.immerse.io
     127.0.0.1 local.content-repository.immerse.io
     127.0.0.1 pin-local.immerse.io
+    127.0.0.1 partner-local.immerse.io
+    127.0.0.1 localstack 
   '';
 
   # Set your time zone.
