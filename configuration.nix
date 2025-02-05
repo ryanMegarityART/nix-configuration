@@ -170,6 +170,8 @@
     nvidia-container-toolkit
     ollama-cuda
     obs-studio
+    mongodb-tools
+    mongodb-compass
   ];
 
   virtualisation.docker.enable = true;
